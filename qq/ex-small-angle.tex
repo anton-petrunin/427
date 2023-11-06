@@ -1,0 +1,87 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{epsfig,lpic,wrapfig}
+%\usepackage[utf8]{inputenc}
+%\usepackage[russian]{babel}
+\usepackage[active]{srcltx}
+\usepackage{amsmath,amssymb} 
+\usepackage{textpos}
+\usepackage{amssymb, amsfonts, amsmath, amsthm}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{pifont}
+\usepackage{enumerate}
+
+\def\CC{\mathbb{C}}%  
+\def\PP{\mathbb{P}}%  
+\def\NN{\mathbb{N}}%  
+\def\RR{\mathbb{R}}%  
+\def\ZZ{\mathbb{Z}}% 
+\def\QQ{\mathbb{Q}}%  
+\def\T{\mathrm{T}}%
+\def\eps{\varepsilon}%  
+\newcommand*{\tc}[1]{\Phi({#1})}
+\def\length{\mathop{\rm length}\nolimits}%  
+\def\"#1{{\accent"7F #1\penalty10000\hskip 0pt plus 0pt}} % ! % 
+\def\:{\colon}
+\def\kur{k}
+\def\tor{\kappa}
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\noindent\textbf{Exercise.} Let $ABC$ be an equilateral h-triangle with side $100$.
+Show that 
+\[|\measuredangle_h ABC|<\frac1{10\,000\,000\,000}.\]
+Sketch $\triangle_h ABC$ in the conformal model.
+
+\ 
+
+\noindent\textit{Solution:}
+By the triangle inequality, the h-distance from $B$ to $(AC)_h$ is at least 50.
+Let $\varphi$ be the angle of parallelism on distance $50$.
+Note that $|\measuredangle_h ABC|<2\cdot \varphi$.
+Therefore it is sufficient to show that 
+\[\varphi<\tfrac 1{2\cdot 10^{10}}.\eqno({*})\]
+
+Applying 13.3, we get
+\begin{align*}
+50&=\tfrac 12\cdot\ln \tfrac{1+\cos \varphi}{1-\cos \varphi}.
+\\
+&\Updownarrow
+\\
+e^{100}&=\tfrac{1+\cos \varphi}{1-\cos \varphi}.
+\\
+&\Updownarrow
+\\
+\cos \varphi&=\tfrac{e^{100}-1}{e^{100}+1}=
+\\
+&= 1-\tfrac{2}{e^{100}+1}.
+\\
+&\Downarrow
+\\
+1-\tfrac{\varphi^2}{10}&\geqslant 1-\tfrac{2}{e^{100}+1}, \tag{since $\cos\varphi\leqslant 1-\tfrac{\varphi^2}{10}$}
+\\
+&\Downarrow
+\\
+\varphi&<\tfrac{\sqrt{20}}{e^{50}}< 
+\\
+&<10^{-15}\tag{since $e^3>10$}
+\end{align*}
+Whence $({*})$ follows.
+
+\ 
+
+
+(Note that $\phi=\arccos (1-\tfrac{2}{e^{100}+1})$.
+If you try calculate this value on a standard calculator, then (likely) you get zero.
+Evidently, the answer is close to zero, but it cannot be zero.
+If you try to use a more sophisticated software (for example, WolframAlpha), then you get a better estimate, say $\varphi<4\cdot 10^{-22}$.)
+
+\ 
+
+\noindent\textit{Sketch:}
+
+\end{document}
